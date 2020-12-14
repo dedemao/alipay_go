@@ -5,9 +5,33 @@
 
 
 # 文件对应说明
-pc.php 电脑网站支付
+pc.go 电脑网站支付
 
-wap.php   手机网站支付
+wap.go   手机网站支付
 
-qrcode.php   当面付（扫码支付）
+qrcode.go   当面付（扫码支付）
 
+# 使用说明
+1.需要用到支付宝哪一种支付方式，就只下载对应的单个文件即可。
+
+2.文件开头的配置信息必须完善
+
+3.运行
+
+```
+go run qrcode.go
+```
+
+运行后，浏览器打开`http://localhost:8080`即可体验支付
+
+4.参数传递
+```
+#传递支付金额：
+http://localhost:8080/?total_fee=0.02
+#传递订单号：
+http://localhost:8080/?out_trade_no=123456
+#传递订单标题：
+http://localhost:8080/?order_name=订单测试
+#全部传递
+http://localhost:8080/?total_fee=0.02&out_trade_no=123456&order_name=订单测试
+```
