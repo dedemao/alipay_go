@@ -349,13 +349,6 @@ func doPay(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "支付接口出错")
 }
 
-type Book struct {
-	Id      int    `json:"id"`
-	Title   string `json:"title"`
-	Summary string `json:"summary"`
-	Author  string `json:"author"`
-}
-
 //异步回调通知处理
 func notify(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
